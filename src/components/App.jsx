@@ -4,6 +4,9 @@ import { Container } from './Container.styled'
 import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 import ContactList from 'components/ContactList';
+//
+//
+//
 
 const STORAGE_KEY = 'contacts'
 
@@ -59,7 +62,6 @@ const App = () => {
   
     return (
       <>
-        
         
         <section >
           <Container >

@@ -4,7 +4,7 @@ import { Formik, Field } from 'formik';
 import {FormBox, FormLabel, FormInput, FormButton,} from './ContactForm.styled';
 import PropTypes from 'prop-types';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = ({ onSubmit }) => {//************ */
   const inputNameId = nanoid();
   const inputTelId = nanoid();
 
@@ -12,9 +12,9 @@ const ContactForm = ({ onSubmit }) => {
     name: '',
     number: '',
   };
-
+//************* */
   const handleOnSubmit = (values, { resetForm }) => {
-    onSubmit(values);
+    onSubmit(values);//*************** */
     resetForm();
   };
 
