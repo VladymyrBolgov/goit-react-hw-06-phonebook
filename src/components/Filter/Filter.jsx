@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
 import { FilterTitle, FilterInput } from './Filter.styled';
+import { setFilterValue } from 'redux/filtersSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFilterValue } from 'redux/selectors';
 
+const Filter = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(getFilterValue);
 
-const Filter = ({ value, onChange }) => {
-
-//******************** */
+  const filterInputHandler = event => {
+    const inputValue = event.target.value;
+    dispatch(setFilterValue(inputValue));
+  };
 
   return (
     <div>
@@ -12,18 +18,13 @@ const Filter = ({ value, onChange }) => {
       <FilterInput
         type="text"
         name="filter"
-        value={value}
-        onChange={onChange}
+        value={filter}
+        onChange={filterInputHandler}
         title="Search field"
         required
       />
     </div>
   );
-};
-
-Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
 };
 
 export default Filter;
