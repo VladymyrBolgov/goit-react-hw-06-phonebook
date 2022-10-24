@@ -15,7 +15,6 @@ const contactsInitialState = {
 export const contactsSlice = createSlice({
     name: 'contacts',
     initialState: contactsInitialState,
-    
     reducers: {
         addContact: {
             reducer(state, action) {
